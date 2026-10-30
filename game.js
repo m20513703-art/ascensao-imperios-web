@@ -95,4 +95,5 @@ $('#mapBtn').onclick=()=>openModal(`<span class="eyebrow">MAPA DA CAMPANHA</span
 // Provide reset only from keyboard shortcut for QA; never a visible destructive control.
 window.__brumavale={getState:()=>JSON.parse(JSON.stringify(S)),reset:()=>{localStorage.removeItem('brumavale-save');S=init();render()},startBattle,build:showBuild};
 render();
+$('#workerBtn').onclick=()=>{let cost=addWorkerCost();if(S.workers>=7){toast('Limite de trabalhadores atingido.');return}if(S.gems<cost){toast(`São necessárias ${cost} gemas para contratar.`);return}S.gems-=cost;S.workers++;save();render();toast(`Trabalhador contratado por ${cost} gemas.`)};
 })();
