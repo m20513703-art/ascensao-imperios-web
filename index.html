@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#13231d">
+<title>Ascensão dos Impérios — Crônicas de Brumavale</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="topbar"><div class="brand"><div class="crest">♜</div><div><b>ASCENSÃO DOS IMPÉRIOS</b><small>CRÔNICAS DE BRUMAVALE</small></div></div><div class="resources"><div>🪙 <span id="gold">1.000</span></div><div>💚 <span id="elixir">1.000</span></div><div>💎 <span id="gems">500</span></div><div>👷 <span id="workers">1</span> <button id="workerBtn" class="worker-add" title="Contratar trabalhador">+</button></div></div><button id="saveStatus" class="save-pill" title="Salvamento neste navegador">● SALVO</button></header>
+<main id="home" class="layout">
+<section class="world-panel"><div class="scene-head"><div><span class="eyebrow" id="region">VALE DE BRUMAVALE</span><h1 id="fortTitle">Fortaleza 1</h1></div><button id="mapBtn" class="small-btn">🗺️ MAPA</button></div>
+<div class="scene-wrap"><canvas id="village" aria-label="Vila de fantasia em perspectiva isométrica"></canvas><div class="scene-hint">Toque numa construção para ver detalhes</div><div id="toast" class="toast"></div></div>
+<div class="quick-actions"><button id="buildBtn" class="action-btn">🏗️ Construir</button><button id="armyBtn" class="action-btn">🐇 Exército</button><button id="attackBtn" class="action-btn attack">⚔️ Atacar</button><button id="missionBtn" class="action-btn">📜 Missões</button></div>
+</section>
+<aside class="side-panel"><section class="card focus-card"><div class="card-top"><div><span class="eyebrow">FORTALEZA ATUAL</span><h2 id="sideFort">Fortaleza 1 · Nv. 1</h2></div><span class="badge" id="stageBadge">CAMPANHA</span></div><p id="stageDesc">Erga sua vila e prove seu valor no campo de batalha.</p><div class="progress-label"><span>Próximo marco</span><b id="progressText">0 / 2 requisitos</b></div><div class="progress"><i id="progressBar"></i></div><button id="promoteBtn" class="primary-btn">Ver requisitos da Fortaleza 2</button></section>
+<section class="card"><div class="card-top"><h3>👑 Conselho da vila</h3><button class="text-btn" id="missionsOpen">Ver missões</button></div><div id="missionList" class="mission-list"></div></section>
+<section class="card tip-card"><b>✦ Crônicas de Brumavale</b><p>Campanha solo. Seu progresso fica salvo neste navegador. Custos e tempos ainda são valores provisórios para teste.</p></section></aside>
+</main>
+<section id="battleView" class="battle-view hidden"><div class="battle-top"><button id="backHome" class="small-btn">← Vila</button><div><span class="eyebrow">BATALHA DE CAMPANHA</span><h1 id="battleTitle">Ataque</h1></div><div class="battle-timer" id="battleTimer">00:00</div></div><div class="battle-layout"><div class="battle-field"><canvas id="battleCanvas"></canvas><div id="battleMessage" class="battle-message">Escolha tropas e toque em um ponto de entrada.</div><div class="deploy-help">Toque no campo para posicionar tropas. Toque em uma magia para lançá-la.</div></div><aside class="battle-side"><div class="card"><h3>🐾 Tropas</h3><div id="deployUnits" class="deploy-units"></div><div class="spell-row" id="battleSpells"></div><button id="endBattle" class="secondary-btn">Encerrar batalha</button></div><div class="card"><h3>🎯 Objetivo</h3><p id="battleObjective">Destrua a fortaleza rival ou conquiste 50% da vila.</p><div id="battleStats"></div></div></aside></div></section>
+<div id="modalShade" class="modal-shade hidden"><section class="modal" role="dialog" aria-modal="true"><button id="modalClose" class="modal-x">×</button><div id="modalBody"></div></section></div>
+<footer>Jogo demonstrativo em desenvolvimento · campanha local para testar</footer>
+<script src="game.js"></script></body></html>
